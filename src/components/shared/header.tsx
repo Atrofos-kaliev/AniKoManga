@@ -12,7 +12,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ className }) => {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-gradient-to-r from-[#232526] via-[#414345] to-[#232526] shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/80 transition-all duration-300">
+        <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-[rgb(18, 18, 18)] shadow-lg backdrop-blur supports-[backdrop-filter]:bg-background/80 transition-all duration-300">
             <Container className={`flex items-center justify-between py-4 ${className}`}>
                 <div className="flex items-center gap-3">
                     <FaBookOpen className="text-2xl text-[#e2f5f3]" />

@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
 
     return (
         <footer
-            className={`w-full border-t border-border/60 bg-gradient-to-r from-[#232526] via-[#414345] to-[#232526] text-[#e2f5f3] ${className}`}
+            className={`w-full border-t border-border/60 bg-[rgb(18, 18, 18)] text-[#e2f5f3] ${className}`}
         >
             <Container className="py-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">

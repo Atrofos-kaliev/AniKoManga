@@ -1,5 +1,3 @@
-import { ApiInstance } from './api-instance';
-
 export interface JikanApiImageInfo {
   image_url: string | null;
   small_image_url: string | null;
@@ -12,6 +10,13 @@ export interface JikanApiImages {
 }
 
 export interface JikanApiGenre {
+  mal_id: number;
+  type: string;
+  name: string;
+  url: string;
+}
+
+export interface JikanApiAuthor {
   mal_id: number;
   type: string;
   name: string;
@@ -35,6 +40,12 @@ export interface JikanMangaData {
   genres: JikanApiGenre[];
   themes: JikanApiGenre[];
   demographics: JikanApiGenre[];
+  scored_by: number | null;
+  popularity: number | null;
+  members: number | null;
+  favorites: number | null;
+  authors: JikanApiAuthor[];
+  serializations: JikanApiGenre[];
 }
 
 export interface JikanApiSearchResponse<T> {
@@ -55,44 +66,37 @@ export interface GetMangaSearchParams {
   limit?: number;
   page?: number;
   q?: string;
-  type?: 'manga' | 'novel' | 'lightnovel' | 'oneshot' | 'doujin' | 'manhwa' | 'manhua';
+  type?:
+    | "manga"
+    | "novel"
+    | "lightnovel"
+    | "oneshot"
+    | "doujin"
+    | "manhwa"
+    | "manhua";
   score?: number;
   min_score?: number;
   max_score?: number;
-  status?: 'publishing' | 'complete' | 'hiatus' | 'discontinued' | 'upcoming';
+  status?: "publishing" | "complete" | "hiatus" | "discontinued" | "upcoming";
   sfw?: boolean;
   genres?: string;
   genres_exclude?: string;
   order_by?:
-    | 'mal_id'
-    | 'title'
-    | 'start_date'
-    | 'end_date'
-    | 'chapters'
-    | 'volumes'
-    | 'score'
-    | 'scored_by'
-    | 'rank'
-    | 'popularity'
-    | 'members'
-    | 'favorites';
-  sort?: 'desc' | 'asc';
+    | "mal_id"
+    | "title"
+    | "start_date"
+    | "end_date"
+    | "chapters"
+    | "volumes"
+    | "score"
+    | "scored_by"
+    | "rank"
+    | "popularity"
+    | "members"
+    | "favorites";
+  sort?: "desc" | "asc";
   letter?: string;
   magazines?: string;
   start_date?: string;
   end_date?: string;
 }
-
-export const getMangaSearch = async (
-  params: GetMangaSearchParams
-): Promise<JikanApiSearchResponse<JikanMangaData>> => {
-  try {
-    const response = await ApiInstance.get<JikanApiSearchResponse<JikanMangaData>>('/manga', {
-      params,
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching manga search:', error);
-    throw error;
-  }
-};

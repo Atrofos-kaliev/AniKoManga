@@ -1,7 +1,5 @@
-// next.config.js
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Рекомендуется
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -10,10 +8,8 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
-      // Если вы используете placeholder с другого домена, добавьте его сюда
     ],
   },
-  // ... другие ваши настройки
 };
 
 export default nextConfig;

@@ -1,3 +1,4 @@
+
 export interface JikanApiImageInfo {
   image_url: string | null;
   small_image_url: string | null;
@@ -46,6 +47,7 @@ export interface JikanMangaData {
   favorites: number | null;
   authors: JikanApiAuthor[];
   serializations: JikanApiGenre[];
+  rank: number | null;
 }
 
 export interface JikanApiSearchResponse<T> {
@@ -99,4 +101,8 @@ export interface GetMangaSearchParams {
   magazines?: string;
   start_date?: string;
   end_date?: string;
+}
+
+export interface JikanApiMangaByIdResponse {
+  data: JikanMangaData;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MangaCard, { MangaCardSkeleton } from "./MangaCard";
+import MangaCard, { MangaCardSkeleton } from "../shared/MangaCard";
 import { Zap } from "lucide-react";
 import Link from "next/link";
 import { JikanMangaData } from "@/@types/types";

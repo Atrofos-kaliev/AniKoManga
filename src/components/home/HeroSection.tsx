@@ -34,10 +34,10 @@ export default function HeroSection() {
           </Link>
 
           <Link
-            href="/manga"
+            href="/manga?order_by=start_date&sort=desc"
             className="inline-flex items-center justify-center rounded-md bg-neutral-700/50 px-8 py-3 text-base font-medium text-neutral-100 shadow-sm hover:bg-neutral-600/70 focus:outline-none focus:ring-2 focus:ring-neutral-500 transition-colors duration-300 ease-in-out"
           >
-            <BookHeadphones size={20} className="mr-2" />
+            <BookHeadphones size={20} className="mr-    2" />
             Новые Главы
           </Link>
         </div>

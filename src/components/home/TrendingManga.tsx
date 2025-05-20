@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import MangaCard, { MangaCardSkeleton } from "./MangaCard";
+import MangaCard, { MangaCardSkeleton } from "../shared/MangaCard";
 import { TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { getMangaSearch } from "@/services/api";

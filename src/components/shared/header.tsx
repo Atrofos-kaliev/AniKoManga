@@ -31,10 +31,10 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
                         Search
                     </Link>
                     <Link
-                        href="/explore"
+                        href="/random"
                         className="text-base font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
                     >
-                        Explore
+                        Random Manga
                     </Link>
                     <Link
                         href="/favorites"
@@ -43,17 +43,11 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
                         Favorites
                     </Link>
                     <Link
-                        href="/profile"
+                        href="/about"
                         className="text-base font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
                     >
-                        Profile
+                        About
                     </Link>
-                    <Button
-                        asChild
-                        className="flex items-center rounded-md px-4 py-2 text-base font-medium text-white bg-gradient-to-r from-[#ff6b81] to-[#ff4757] hover:from-[#ff4757] hover:to-[#ff6b81] shadow-md transition-all duration-200"
-                    >
-                        <Link href="/login">Login</Link>
-                    </Button>
                 </nav>
             </Container>
         </header>

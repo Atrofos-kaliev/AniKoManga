@@ -9,7 +9,7 @@ interface FavoriteItemCardProps {
 }
 
 export default function FavoriteItemCard({ favorite, onRemove }: FavoriteItemCardProps) {
-  const imageUrl = favorite.imageUrl || '/placeholder-cover.png';
+  const imageUrl = favorite.imageUrl || 'https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg';
 
   return (
     <div className="group/favitem relative flex flex-col overflow-hidden rounded-lg border border-neutral-700/80 bg-neutral-800 shadow-md transition-all">
@@ -31,10 +31,10 @@ export default function FavoriteItemCard({ favorite, onRemove }: FavoriteItemCar
       </Link>
       <button
         onClick={() => onRemove(favorite.mal_id)}
-        title="Удалить из избранного"
-        aria-label={`Удалить ${favorite.title} из избранного`}
+        title="Remove from favorites"
+        aria-label={`Remove ${favorite.title} from favorites`}
         className="absolute top-2 right-2 z-10 opacity-0 group-hover/favitem:opacity-100 transition-opacity
-                   rounded-full bg-red-600/80 p-1.5 text-white shadow-md hover:bg-red-700 focus:opacity-100 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-neutral-800"
+           rounded-full bg-red-600/80 p-1.5 text-white shadow-md hover:bg-red-700 focus:opacity-100 focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-neutral-800"
       >
         <HeartCrack size={16} />
       </button>

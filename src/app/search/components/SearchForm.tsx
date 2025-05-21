@@ -25,9 +25,9 @@ export function SearchForm({
           type="text"
           value={searchQueryInput}
           onChange={(e) => onSearchQueryChange(e.target.value)}
-          placeholder="Название манги, автор..."
+          placeholder="Manga title, author..."
           className="pr-10"
-          aria-label="Поле для поиска манги"
+          aria-label="Manga search field"
         />
         {searchQueryInput && (
           <Button
@@ -36,15 +36,15 @@ export function SearchForm({
             size="icon"
             className="absolute right-1 top-1/2 h-8 w-8 -translate-y-1/2 text-neutral-400 hover:text-neutral-100"
             onClick={() => onSearchQueryChange("")}
-            aria-label="Очистить поле поиска"
+            aria-label="Clear the search field."
           >
             <X size={18} />
           </Button>
         )}
       </div>
-      <Button type="submit" disabled={isLoading} className="bg-sky-500 hover:bg-sky-600">
+      <Button type="submit" disabled={isLoading} className="bg-sky-500 hover:bg-sky-600 cursor-pointer">
         <SearchIcon size={20} className="mr-2 sm:mr-0 md:mr-2" />
-        <span className="hidden md:inline">Искать</span>
+        <span className="hidden md:inline">Search</span>
       </Button>
     </form>
   );

@@ -39,13 +39,13 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                             About Us
                         </Link>
                         <Link
-                            href="/contact"
+                            href="#"
                             className="text-sm font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
                         >
                             Contact
                         </Link>
                         <Link
-                            href="/privacy"
+                            href="#"
                             className="text-sm font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
                         >
                             Privacy Policy
@@ -86,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                 
                 <div className="mt-8 pt-6 border-t border-border/40 text-center text-xs text-gray-500">
                     <p>
-                        Crafted with by Ablaykan
+                        Crafted with by Atrofos-kaliev
                     </p>
                 </div>
             </Container>

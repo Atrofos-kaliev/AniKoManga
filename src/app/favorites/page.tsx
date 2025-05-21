@@ -51,18 +51,18 @@ export default function FavoritesPage() {
       {favorites.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-lg border border-neutral-700 bg-neutral-800 p-10 text-center">
           <ListX size={64} className="mb-6 text-neutral-500" />
-          <h2 className="text-xl font-semibold text-neutral-300">
-            Список избранного пуст
-          </h2>
-          <p className="mt-2 text-neutral-400">
-            Добавляйте мангу в избранное, чтобы она появилась здесь.
-          </p>
-          <Link
+            <h2 className="text-xl font-semibold text-neutral-300">
+            Favorites list is empty
+            </h2>
+            <p className="mt-2 text-neutral-400">
+            Add manga to your favorites and they will appear here.
+            </p>
+            <Link
             href="/"
             className="mt-6 rounded-md bg-sky-500 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
-          >
-            Искать мангу
-          </Link>
+            >
+            Search manga
+            </Link>
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">

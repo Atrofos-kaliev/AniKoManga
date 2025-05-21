@@ -51,7 +51,7 @@ export default function MangaCoverColumn({ manga }: MangaCoverColumnProps) {
         </div>
 
         <button className="mt-4 w-full rounded-md bg-sky-500 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-sky-600">
-          Начать читать (Глава 1)
+          Start Reading
         </button>
 
         <button
@@ -68,7 +68,7 @@ export default function MangaCoverColumn({ manga }: MangaCoverColumnProps) {
             size={18}
             className={`mr-2 ${clientLoaded && isFavorite ? "fill-current" : ""}`}
           />
-          {clientLoaded && isFavorite ? "В избранном" : "В избранное"}
+            {clientLoaded && isFavorite ? "In Favorites" : "Add to Favorites"}
         </button>
       </div>
     </div>

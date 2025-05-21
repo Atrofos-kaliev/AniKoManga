@@ -40,7 +40,7 @@ function SearchPageContent() {
     <div className="container mx-auto min-h-screen px-4 py-8 text-neutral-100">
       <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <h1 className="text-3xl font-bold text-neutral-50 md:text-4xl">
-          Поиск Манги
+          Manga Search
         </h1>
         <Button
           variant="outline"
@@ -48,7 +48,7 @@ function SearchPageContent() {
           className="bg-neutral-700 border-neutral-600 text-neutral-100 hover:bg-neutral-600 hover:text-neutral-50 md:w-auto w-full"
           >
           <SlidersHorizontal size={18} className="mr-2" />
-          {showFiltersPanel ? "Скрыть фильтры" : "Показать фильтры"}
+            {showFiltersPanel ? "Hide Filters" : "Show Filters"}
           {!isStoreDefault() && <span className="ml-2 h-2 w-2 rounded-full bg-sky-500"></span>}
         </Button>
       </div>

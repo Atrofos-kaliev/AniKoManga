@@ -60,15 +60,15 @@ export default function MangaCard({ manga }: MangaCardProps) {
           />
           {manga.chapters && (
             <div className="absolute bottom-0 left-0 right-0 bg-black/75 px-2 py-1 text-xs text-neutral-200">
-              Глав: {manga.chapters}
+              C: {manga.chapters}
             </div>
           )}
 
           {clientLoaded && (
             <button
               onClick={handleToggleFavorite}
-              title={isFavorite ? "Убрать из избранного" : "Добавить в избранное"}
-              aria-label={isFavorite ? `Убрать ${manga.title_english || manga.title} из избранного` : `Добавить ${manga.title_english || manga.title} в избранное`}
+              title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+              aria-label={isFavorite ? `Remove ${manga.title_english || manga.title} from Favorites` : `Add ${manga.title_english || manga.title} to Favorites`}
               className={`absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full p-1.5 shadow-md transition-all duration-200
                           focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 focus:ring-offset-neutral-800
                           ${isFavorite

@@ -8,7 +8,7 @@ export default function MangaSynopsis({ synopsis }: MangaSynopsisProps) {
   return (
     <div className="mb-6">
       <h3 className="mb-2 text-xl font-semibold text-neutral-200">
-        Описание
+        Description
       </h3>
       <p className="whitespace-pre-line text-sm leading-relaxed text-neutral-300">
         {synopsis}

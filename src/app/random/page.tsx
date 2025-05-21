@@ -23,7 +23,7 @@ export default function RandomMangaPage() {
       const lastVisiblePage = initialResponse.pagination?.last_visible_page;
 
       if (!lastVisiblePage || lastVisiblePage === 0) {
-        setError("Не удалось получить информацию о страницах для выбора случайной манги (SFW).");
+        setError("Failed to get page information for selecting a random manga.");
         setIsLoading(false);
         return;
       }
@@ -41,26 +41,28 @@ export default function RandomMangaPage() {
         }
       }
 
-      setError(`Попробуйте еще раз.`);
+    setError(`Please try again.`);
 
     } catch (err: any) {
-      let errorMessage = "Произошла ошибка при поиске случайной манги.";
-      if (err.response?.status === 404) {
-        errorMessage = "Не удалось найти случайную мангу. Попробуйте позже.";
-      } else if (err.response?.status === 500) {
-        errorMessage = "Сервер временно недоступен. Попробуйте позже.";
-      }
+        let errorMessage = "An error occurred while searching for a random manga.";
+        if (err.response?.status === 404) {
+            errorMessage = "Could not find a random manga. Please try again later.";
+        } else if (err.response?.status === 500) {
+            errorMessage = "The server is temporarily unavailable. Please try again later.";
+        }
+        setError(errorMessage);
+        setIsLoading(false);
     }
-  };
+};
 
   return (
     <div className="container mx-auto flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center px-4 py-8 text-neutral-100">
       <div className="mb-10 text-center">
         <h1 className="mb-3 text-3xl font-bold text-neutral-50 md:text-4xl">
-          Найти Случайную Мангу
+          Find a Random Manga
         </h1>
         <p className="mx-auto max-w-md text-neutral-400">
-          Не знаете, что почитать? Нажмите кнопку, и мы подберем для вас что-нибудь наугад!
+          Not sure what to read? Click the button and we'll pick something random for you!
         </p>
       </div>
 
@@ -75,7 +77,7 @@ export default function RandomMangaPage() {
         ) : (
           <Dices size={24} className="mr-2 transition-transform duration-300 group-hover:rotate-[360deg] group-hover:scale-110" />
         )}
-        Найти мне мангу!
+        Find me a manga!
       </Button>
 
       {!isLoading && error && (

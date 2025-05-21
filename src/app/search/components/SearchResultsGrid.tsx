@@ -45,9 +45,9 @@ export function SearchResultsGrid({
       <div className="flex flex-col items-center justify-center rounded-lg border border-neutral-700 bg-neutral-800 p-8 text-center text-neutral-400">
         <Frown size={48} className="mb-4" />
         <p className="text-lg font-semibold">
-          По вашему запросу и фильтрам ничего не найдено.
+          Nothing was found for your query and filters.
         </p>
-        <p className="text-sm">Попробуйте изменить запрос или ослабить фильтры.</p>
+        <p className="text-sm">Try changing the query or loosening the filters.</p>
       </div>
     );
   }
@@ -57,10 +57,10 @@ export function SearchResultsGrid({
         <div className="flex flex-col items-center justify-center rounded-lg border border-neutral-700 bg-neutral-800 p-10 text-center text-neutral-400">
            <SearchPlaceholderIcon size={64} className="mb-6 text-neutral-500" />
            <h2 className="text-xl font-semibold text-neutral-300">
-             Начните поиск или выберите фильтры
+             Start searching or select filters
            </h2>
            <p className="mt-2">
-             Введите название манги, автора или воспользуйтесь фильтрами.
+             Enter a manga title, author, or use the filters.
            </p>
          </div>
       );
@@ -71,7 +71,7 @@ export function SearchResultsGrid({
     return (
       <>
         <div className="mb-4 text-sm text-neutral-400">
-          Найдено результатов: {totalResults.toLocaleString()}
+          Results found: {totalResults.toLocaleString()}
         </div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {results.map((manga) => (

@@ -70,8 +70,8 @@ export function useMangaSearch() {
       setTotalResults(response.pagination.items.total || 0);
     } catch (err: any) {
       console.error("Failed to fetch search results:", err);
-      let message = "Не удалось загрузить результаты поиска. Попробуйте снова.";
-      if (err.response?.status === 400) message = "Ошибка в параметрах запроса. Проверьте фильтры.";
+      let message = "Failed to load search results. Please try again.";
+      if (err.response?.status === 400) message = "There was an error with the request parameters. Please check your filters.";
       setError(message); setResults([]); setTotalPages(0); setTotalResults(0);
     } finally {
       setIsLoading(false);

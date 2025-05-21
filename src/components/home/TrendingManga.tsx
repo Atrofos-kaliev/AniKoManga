@@ -41,10 +41,10 @@ export default function TrendingManga() {
         <div className="mb-8 flex items-center justify-between">
           <h2 className="flex items-center text-2xl font-bold text-neutral-100 sm:text-3xl">
             <TrendingUp size={28} className="mr-3 text-sky-400" />
-            В Тренде
+            Trending
           </h2>
           <Link href="/search?order_by=popularity&sort=asc"className="text-sm font-medium text-sky-400 hover:text-sky-300 hover:underline">
-          Смотреть все
+          View All
           </Link>
         </div>
         {isLoading && (
@@ -60,7 +60,7 @@ export default function TrendingManga() {
           </div>
         )}
         {!isLoading && !error && mangaList.length === 0 && (
-           <div className="text-center text-neutral-400">Популярная манга не найдена.</div>
+           <div className="text-center text-neutral-400">Popular manga not found.</div>
         )}
         {!isLoading && !error && mangaList.length > 0 && (
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">

@@ -1,8 +1,8 @@
 "use client";
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { cn } from '@/lib/utils'; 
 
 interface SearchPaginationProps {
   currentPage: number;
@@ -21,28 +21,42 @@ export function SearchPagination({
     return null;
   }
 
+  const buttonBaseClasses = "transition-colors duration-150 ease-in-out cursor-pointer";
+  const enabledButtonClasses = "border-sky-500 bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 hover:text-sky-200 focus-visible:ring-sky-400";
+  const disabledButtonClasses = "border-neutral-700 bg-neutral-800 text-neutral-500 opacity-60 cursor-not-allowed";
+
   return (
-    <div className="mt-12 flex items-center justify-center gap-2 sm:gap-4">
+    <div className="mt-12 flex items-center justify-center gap-3 sm:gap-4">
       <Button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1 || isLoading}
         variant="outline"
         size="sm"
-        className="border-neutral-600 text-neutral-300 hover:bg-neutral-700 hover:text-neutral-100"
+        className={cn(
+          buttonBaseClasses,
+          (currentPage === 1 || isLoading) ? disabledButtonClasses : enabledButtonClasses
+        )}
       >
-        <ChevronLeft size={18} className="mr-1" /> <span className="hidden sm:inline">Назад</span>
+        <ChevronLeft size={18} className="mr-1.5" />
+        <span className="hidden sm:inline">Назад</span>
       </Button>
-      <span className="text-neutral-300 text-sm sm:text-base whitespace-nowrap">
+
+      <span className="text-sm font-medium text-sky-400 sm:text-base whitespace-nowrap px-2">
         Стр. {currentPage} из {totalPages}
       </span>
+
       <Button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages || isLoading}
         variant="outline"
         size="sm"
-        className="border-neutral-600 text-neutral-300 hover:bg-neutral-700 hover:text-neutral-100"
+        className={cn(
+          buttonBaseClasses,
+          (currentPage === totalPages || isLoading) ? disabledButtonClasses : enabledButtonClasses
+        )}
       >
-        <span className="hidden sm:inline">Вперед</span> <ChevronRight size={18} className="ml-1" />
+        <span className="hidden sm:inline">Вперед</span>
+        <ChevronRight size={18} className="ml-1.5" />
       </Button>
     </div>
   );

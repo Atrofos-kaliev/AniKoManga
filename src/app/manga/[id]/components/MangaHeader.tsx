@@ -33,18 +33,18 @@ export default function MangaHeader({ manga }: MangaHeaderProps) {
         {manga.members && (
           <div className="flex items-center text-neutral-400">
             <Users size={18} className="mr-1.5" />
-            <span className="text-sm">{manga.members.toLocaleString()} участников</span>
+            <span className="text-sm">{manga.members.toLocaleString()} memebers</span>
           </div>
         )}
         {manga.rank && (
           <div className="flex items-center text-neutral-400">
-            <span className="mr-1 text-xs font-medium">Ранг:</span>
+            <span className="mr-1 text-xs font-medium">Rank:</span>
             <span className="text-sm font-semibold">#{manga.rank.toLocaleString()}</span>
           </div>
         )}
         {manga.popularity && (
           <div className="flex items-center text-neutral-400">
-            <span className="mr-1 text-xs font-medium">Популярность:</span>
+            <span className="mr-1 text-xs font-medium">Popularity:</span>
             <span className="text-sm font-semibold">#{manga.popularity.toLocaleString()}</span>
           </div>
         )}

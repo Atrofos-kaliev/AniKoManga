@@ -5,13 +5,13 @@ import { Drama, Swords, Laugh, Heart, Ghost, Skull, School, BookOpen } from "luc
 import React from "react";
 
 const genresData = [
-  { name: "Экшен", id: 1, iconName: "Swords" },
-  { name: "Комедия", id: 4, iconName: "Laugh" },
-  { name: "Драма", id: 8, iconName: "Drama" },
-  { name: "Романтика", id: 22, iconName: "Heart" },
-  { name: "Фэнтези", id: 10, iconName: "Ghost" },
-  { name: "Хоррор", id: 14, iconName: "Skull" },
-  { name: "Школа", id: 23, iconName: "School" },
+  { name: "Action", id: 1, iconName: "Swords" },
+  { name: "Comedy", id: 4, iconName: "Laugh" },
+  { name: "Drama", id: 8, iconName: "Drama" },
+  { name: "Romance", id: 22, iconName: "Heart" },
+  { name: "Fantasy", id: 10, iconName: "Ghost" },
+  { name: "Horror", id: 14, iconName: "Skull" },
+  { name: "School", id: 23, iconName: "School" },
 ];
 
 const GenreIcon = ({ name }: { name: string }) => {
@@ -35,10 +35,10 @@ export default function BrowseByGenre() {
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
           <h2 className="text-2xl font-bold text-neutral-100 sm:text-3xl">
-            Популярные Жанры
+            Popular Genres
           </h2>
           <p className="mt-2 text-neutral-400">
-            Найдите мангу на свой вкус.
+            Find manga to your taste.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">

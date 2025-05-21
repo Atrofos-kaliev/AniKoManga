@@ -1,11 +1,9 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getMangaById } from "@/services/api";
 import type { JikanMangaData } from "@/@types/types";
 import { ArrowLeft, Info } from "lucide-react";
-
 import MangaCoverColumn from "./components/MangaCoverColumn";
 import MangaHeader from "./components/MangaHeader";
 import MangaSynopsis from "./components/MangaSynopsis";
@@ -21,17 +19,17 @@ interface MangaPageProps {
 const ErrorDisplay = ({ message, id }: { message: string; id?: string }) => (
   <div className="container mx-auto flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center px-4 py-8 text-center text-red-400">
     <Info size={48} className="mb-4" />
-    <h1 className="mb-2 text-2xl font-semibold">Ошибка</h1>
+    <h1 className="mb-2 text-2xl font-semibold">Error</h1>
     <p>{message}</p>
     <Link href="/" className="mt-6 rounded-md bg-sky-500 px-4 py-2 text-white transition-colors hover:bg-sky-600">
-      На главную
+      Back to Home
     </Link>
   </div>
 );
 
 const NotFoundDisplay = () => (
   <div className="container mx-auto flex min-h-[calc(100vh-10rem)] items-center justify-center px-4 py-8 text-neutral-300">
-    Манга не найдена.
+    Manga not found.
   </div>
 );
 
@@ -58,9 +56,9 @@ export default function MangaPage({ params }: MangaPageProps) {
       } catch (err: any) {
         console.error(`Failed to fetch manga ${id}:`, err);
         if (err.response?.status === 404) {
-          setError(`Манга с ID ${id} не найдена.`);
-        } else {
-          setError("Не удалось загрузить информацию о манге. Попробуйте обновить страницу.");
+            setError(`Manga with ID ${id} not found.`);
+          } else {
+            setError("Failed to load manga information. Please try refreshing the page.");
         }
       } finally {
         setIsLoading(false);

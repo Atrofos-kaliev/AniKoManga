@@ -46,7 +46,7 @@ export default function RecentlyUpdated() {
             Недавние Обновления
           </h2>
           <Link
-            href="/manga?order_by=start_date&sort=desc&status=publishing"
+            href="/search?order_by=start_date&sort=desc&status=publishing"
             className="text-sm font-medium text-sky-400 hover:text-sky-300 hover:underline"
           >
             Все обновления

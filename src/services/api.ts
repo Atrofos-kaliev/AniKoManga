@@ -2,6 +2,7 @@ import axios from "axios";
 import { ApiInstance } from "./api-instance";
 import type {
   GetMangaSearchParams,
+  JikanApiGenre,
   JikanApiMangaByIdResponse,
   JikanApiSearchResponse,
   JikanMangaData,

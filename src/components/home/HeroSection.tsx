@@ -4,6 +4,14 @@ import Link from "next/link";
 import { Rocket, BookHeadphones } from "lucide-react";
 import React from "react";
 
+ const scrollToTrending = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const trendingSection = document.getElementById("trending-manga-section");
+    if (trendingSection) {
+      trendingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
 export default function HeroSection() {
   return (
     <section
@@ -25,16 +33,16 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-          <Link
-            href="/manga/search"
-            className="inline-flex items-center justify-center rounded-md bg-teal-600 opacity-80 px-8 py-3 text-base font-semibold text-white shadow-lg hover:opacity-95 hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-colors duration-300 ease-in-out"
+          <button
+            onClick={scrollToTrending}
+            className="inline-flex items-center justify-center rounded-md bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg transition-colors duration-300 ease-in-out hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-black/50"
           >
             <Rocket size={20} className="mr-2" />
             Начать Читать
-          </Link>
+          </button>
 
           <Link
-            href="/manga?order_by=start_date&sort=desc"
+            href="/search?order_by=start_date&sort=desc"
             className="inline-flex items-center justify-center rounded-md bg-neutral-700/50 px-8 py-3 text-base font-medium text-neutral-100 shadow-sm hover:bg-neutral-600/70 focus:outline-none focus:ring-2 focus:ring-neutral-500 transition-colors duration-300 ease-in-out"
           >
             <BookHeadphones size={20} className="mr-    2" />

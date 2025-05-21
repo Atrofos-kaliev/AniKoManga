@@ -4,14 +4,14 @@ import Link from "next/link";
 import { Drama, Swords, Laugh, Heart, Ghost, Skull, School, BookOpen } from "lucide-react";
 import React from "react";
 
-const genres = [
-  { name: "Экшен", href: "/manga?genres=1", iconName: "Swords" },
-  { name: "Комедия", href: "/manga?genres=4", iconName: "Laugh" },
-  { name: "Драма", href: "/manga?genres=8", iconName: "Drama" },
-  { name: "Романтика", href: "/manga?genres=22", iconName: "Heart" },
-  { name: "Фэнтези", href: "/manga?genres=10", iconName: "Ghost" },
-  { name: "Хоррор", href: "/manga?genres=14", iconName: "Skull" },
-  { name: "Школа", href: "/manga?genres=23", iconName: "School" },
+const genresData = [
+  { name: "Экшен", id: 1, iconName: "Swords" },
+  { name: "Комедия", id: 4, iconName: "Laugh" },
+  { name: "Драма", id: 8, iconName: "Drama" },
+  { name: "Романтика", id: 22, iconName: "Heart" },
+  { name: "Фэнтези", id: 10, iconName: "Ghost" },
+  { name: "Хоррор", id: 14, iconName: "Skull" },
+  { name: "Школа", id: 23, iconName: "School" },
 ];
 
 const GenreIcon = ({ name }: { name: string }) => {
@@ -42,10 +42,10 @@ export default function BrowseByGenre() {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
-          {genres.map((genre) => (
+          {genresData.map((genre) => (
             <Link
               key={genre.name}
-              href={genre.href}
+              href={`/search?genres=${genre.id}`}
               className="group flex flex-col items-center justify-center rounded-lg border border-neutral-700 bg-neutral-800 p-4 text-center shadow-md transition-all hover:bg-sky-500 hover:border-sky-400 hover:shadow-lg"
             >
               <GenreIcon name={genre.iconName} />

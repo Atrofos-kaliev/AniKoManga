@@ -36,18 +36,15 @@ export default function TrendingManga() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16">
+    <section id="trending-manga-section" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="mb-8 flex items-center justify-between">
           <h2 className="flex items-center text-2xl font-bold text-neutral-100 sm:text-3xl">
             <TrendingUp size={28} className="mr-3 text-sky-400" />
             В Тренде
           </h2>
-          <Link
-            href="/manga?order_by=popularity&sort=desc"
-            className="text-sm font-medium text-sky-400 hover:text-sky-300 hover:underline"
-          >
-            Смотреть все
+          <Link href="/search?order_by=popularity&sort=asc"className="text-sm font-medium text-sky-400 hover:text-sky-300 hover:underline">
+          Смотреть все
           </Link>
         </div>
         {isLoading && (

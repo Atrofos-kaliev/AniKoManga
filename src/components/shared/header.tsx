@@ -25,6 +25,12 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
                 </div>
                 <nav className="flex items-center gap-6">
                     <Link
+                        href="/search"
+                        className="text-base font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
+                    >
+                        Search
+                    </Link>
+                    <Link
                         href="/explore"
                         className="text-base font-medium text-[#e2f5f3] hover:text-[#ff6b81] transition-colors duration-200"
                     >

@@ -38,11 +38,11 @@ export function SearchPagination({
         )}
       >
         <ChevronLeft size={18} className="mr-1.5" />
-        <span className="hidden sm:inline">Назад</span>
+        <span className="hidden sm:inline">Back</span>
       </Button>
 
       <span className="text-sm font-medium text-sky-400 sm:text-base whitespace-nowrap px-2">
-        Стр. {currentPage} из {totalPages}
+        Page {currentPage} of {totalPages}
       </span>
 
       <Button
@@ -55,7 +55,7 @@ export function SearchPagination({
           (currentPage === totalPages || isLoading) ? disabledButtonClasses : enabledButtonClasses
         )}
       >
-        <span className="hidden sm:inline">Вперед</span>
+        <span className="hidden sm:inline">Next</span>
         <ChevronRight size={18} className="ml-1.5" />
       </Button>
     </div>
